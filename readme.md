@@ -15,5 +15,5 @@
 
 ## | Sobre o jogo ##
 
-<p>Um simples jogo com o objetivo de cuidar de um Villager, onde você pode comprar comida e o alimentar.</p><br><br>
+<p>Um simples jogo com o intuito de cuidar de um Villager, onde você pode comprar alimento e o alimentar.</p><br><br>
 <p>ESSE JOGO <b>NÃO</b> É UM PRODUTO OFICIAL DE MINECRAFT. <b>NÃO</b> APROVADO OU ASSOCIADO À MOJANG / Mojang © 2009-2023. "Minecraft" é uma marca registrada da Mojang Synergies AB.
