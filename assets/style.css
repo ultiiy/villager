@@ -362,7 +362,7 @@ footer {
     }
 
     .personagem {
-        left: 42%;
+        left: 40%;
     }
 
     #village {
@@ -404,7 +404,7 @@ footer {
     }
 
     footer {
-        font-size: 8px;
+        font-size: 6px;
         margin: 8px;
     }
 }
