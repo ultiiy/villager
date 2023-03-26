@@ -12,7 +12,7 @@
 }
 
 html {
-    cursor: url(/assets/files/cursorCross.png), default;
+    cursor: url('files/cursorCross.png'), default;
     background-color: transparent;
 }
 
@@ -74,7 +74,7 @@ html {
 }
 
 .active {
-    cursor: url(/assets/files/Cursor.png), default;
+    cursor: url('files/cursor.png'), default;
 }
 
 .active:active {
@@ -173,7 +173,7 @@ html {
 }
 
 .sacola {
-    cursor: url(/assets/files/Cursor.png), default;
+    cursor: url('files/cursor.png'), default;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -207,7 +207,7 @@ html {
 
 #marketplace {
     display: none;
-    background-image: url(/assets/files/marketplace/fundoMercado.png);
+    background-image: url('files/marketplace/fundoMercado.png');
     background-size: cover;
     position: fixed;
     top: 32%;
@@ -247,7 +247,7 @@ html {
 }
 
 .abas label {
-    cursor: url(/assets/files/Cursor.png), default;
+    cursor: url('files/cursor.png'), default;
     padding: 15px;
     background: #e2e2e2;
     margin-right: 6px;
@@ -294,7 +294,7 @@ html {
 }
 
 .abas .valor {
-    cursor: url(/assets/files/Cursor.png), default;
+    cursor: url('files/cursor.png'), default;
     display: flex;
     justify-content: center;
     align-items: center;
