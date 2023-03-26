@@ -155,7 +155,7 @@ html {
 
 .pillager {
     position: absolute;
-    bottom: 0;
+    bottom: 0%;
     left: 3.6%;
     transform: translateX(-50%);
 }
@@ -405,6 +405,6 @@ footer {
 
     footer {
         font-size: 8px;
-        margin: 8px;
+        margin: 6px;
     }
 }
