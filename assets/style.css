@@ -402,4 +402,9 @@ footer {
     .abas .tab {
         border-radius: 0 0 0 6px;
     }
+
+    footer {
+        font-size: 8px;
+        margin: 8px;
+    }
 }
