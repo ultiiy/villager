@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'Minercraftory';
+    src: url('files/Minercraftory.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Minercraftory";
+}
+
+html {
+    cursor: url(/assets/files/cursorCross.png), default;
+    background-color: transparent;
+}
+
+/*------------ Menu principal ------------*/
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 44px;
+}
+
+#stsVida img,
+#stsFome img {
+    width: 300px;
+}
+
+/*------------ Money ------------*/
+
+#moedas ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+#moedas span {
+    color: #33b36d;
+    font-size: 32px;
+}
+
+#moedas img {
+    width: 45px;
+}
+
+#moedas .carrinho {
+    width: 32px;
+    margin-left: 8px;
+}
+
+/*------------ Mensagens ------------*/
+
+#mensagem {
+    font-size: 32px;
+    text-align: center;
+}
+
+.reset {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.reset img {
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 45%));
+}
+
+.error {
+    animation: headShake 1.4s;
+}
+
+.active {
+    cursor: url(/assets/files/Cursor.png), default;
+}
+
+.active:active {
+    transform: scale(0.86);
+}
+
+/*------------ Villager ------------*/
+
+.personagem {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/*------------ Particulas ------------*/
+
+#particulas {
+    position: fixed;
+    bottom: 75%;
+    left: 51.5%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    z-index: 6;
+}
+
+#particulas img {
+    width: 16px;
+    position: absolute;
+    animation: snow-fall 0.9s linear normal;
+}
+
+.random-position {
+    position: absolute;
+}
+
+@keyframes snow-fall {
+    0% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/*------------ Balão de fala ------------*/
+
+.balao {
+    display: none;
+    position: fixed;
+    bottom: 75%;
+    left: 72.5%;
+    transform: translateX(-50%);
+    z-index: 7;
+}
+
+.balao img {
+    width: 128px;
+}
+
+.balao span {
+    position: fixed;
+    bottom: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balao span img {
+    width: 52px;
+}
+
+/*------------ Pillager ------------*/
+
+.pillager {
+    position: absolute;
+    bottom: 0;
+    left: 3.6%;
+    transform: translateX(-50%);
+}
+
+.pillager img {
+    width: 128px;
+}
+
+/*------------ Bundle ------------*/
+
+.inventario {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.sacola {
+    cursor: url(/assets/files/Cursor.png), default;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 64px;
+}
+
+.sacola ul {
+    display: none;
+    list-style: none;
+    margin-right: 18px;
+}
+
+.sacola li img {
+    width: 55px;
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 25%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+}
+
+.sacola li p {
+    text-align: end;
+    margin-bottom: 12px;
+}
+
+#bundle {
+    width: 96px;
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 25%));
+}
+
+/*------------ Marketplace ------------*/
+
+#marketplace {
+    display: none;
+    background-image: url(/assets/files/marketplace/fundoMercado.png);
+    background-size: cover;
+    position: fixed;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.market {
+    width: 700px;
+    height: 374px;
+}
+
+.close {
+    position: absolute;
+    left: 93.6%;
+    top: 3%;
+    width: 32px;
+    border-radius: 4px;
+    z-index: 9;
+}
+
+.conteudo {
+    position: relative;
+    bottom: -3.4%;
+}
+
+.abas {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 674px;
+    margin: auto;
+}
+
+.abas input[type="radio"] {
+    display: none;
+}
+
+.abas label {
+    cursor: url(/assets/files/Cursor.png), default;
+    padding: 15px;
+    background: #e2e2e2;
+    margin-right: 6px;
+    border-radius: 6px 6px 0 0;
+}
+
+.abas label img {
+    width: 32px;
+}
+
+.abas .tab {
+    width: 100%;
+    background: #fff;
+    order: 1;
+    display: none;
+    height: 287px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.abas .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 12px;
+    max-width: 674px;
+}
+
+.abas .card {
+    margin: 6px;
+    width: 96px;
+    max-width: 128px;
+}
+
+.abas .card p {
+    margin-bottom: 6px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.centralizar {
+    display: flex;
+    margin: auto;
+}
+
+.abas .valor {
+    cursor: url(/assets/files/Cursor.png), default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px 0 6px;
+}
+
+.abas .valor p {
+    margin-right: 2px;
+}
+
+.abas .valor img {
+    width: 18px;
+}
+
+.abas input[type='radio']:checked+label+.tab {
+    display: block;
+}
+
+.abas input[type="radio"]:checked+label {
+    background: #fff;
+}
+
+/*------------ Footer ------------*/
+
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 12px;
+    font-size: 14px;
+}
+
+/*------------ Mobile ------------*/
+
+@media(max-width: 768px) {
+    .menu {
+        justify-content: space-between;
+        margin: 18px;
+    }
+
+    #stsVida img,
+    #stsFome img {
+        width: 200px;
+    }
+
+    #moedas span {
+        color: #33b36d;
+        font-size: 24px;
+    }
+
+    #moedas img {
+        width: 32px;
+    }
+
+    #moedas .carrinho {
+        width: 22px;
+    }
+
+    #mensagem {
+        font-size: 16px;
+    }
+
+    #reset img {
+        width: 40px;
+    }
+
+    .personagem {
+        left: 46%;
+    }
+
+    #village {
+        width: 350px;
+    }
+
+    .sacola {
+        margin: 18px;
+    }
+
+    .sacola li img {
+        width: 42px;
+    }
+
+    #bundle {
+        width: 75px;
+    }
+
+    #marketplace {
+        top: 40%;
+    }
+
+    .market {
+        width: 360px;
+    }
+
+    .close {
+        left: 90%;
+    }
+
+    .abas {
+        background-color: transparent;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-left: 10px;
+    }
+
+    .abas .tab {
+        border-radius: 0 0 0 6px;
+    }
+}
