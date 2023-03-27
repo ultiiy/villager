@@ -407,7 +407,7 @@ function comprarBeterraba() {
         error.classList.add("error");
         particulaAngry();
     } else {
-        if (parseInt(localStorage.getItem("beterraba")) !== 64) {
+        if (alimento.beterraba !== 64) {
             villager.coins -= 2.5;
             alimento.beterraba++;
             villager.exibir();
@@ -426,7 +426,7 @@ function comprarBatata() {
         error.classList.add("error");
         particulaAngry();
     } else {
-        if (parseInt(localStorage.getItem("batata")) !== 64) {
+        if (alimento.batata !== 64) {
             villager.coins -= 5;
             alimento.batata++;
             villager.exibir();
