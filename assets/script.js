@@ -1,5 +1,6 @@
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 }
 let ferramenta = { picaretaDiamante: false, picaretaNetherite: false };
+let menu = { market: false, cave: false };
 let villager = {
     vida: 100, fome: 100, coins: 0,
 
@@ -27,8 +28,8 @@ let villager = {
             document.querySelector("#bundle").style.cursor = "not-allowed";
             document.querySelector(".carrinho").style.cursor = "not-allowed";
             document.querySelector(".picareta").style.cursor = "not-allowed";
-            document.querySelector(".carrinho").classList.remove("active");
             document.querySelector(".picareta").classList.remove("active");
+            document.querySelector(".carrinho").classList.remove("active");
             document.querySelector("#bundle").style.opacity = 0.6;
             document.querySelector("#moedas").style.opacity = 0.6;
             closeMarket();
@@ -125,10 +126,12 @@ setInterval(function () {
             villager.vida--;
             villager.statusVida();
         }
+
         if (villager.vida < 100 && villager.vida % 10 === 0) {
             particulaDamage();
         }
-        if (caveStatus === false) {
+
+        if (menu.cave === false) {
             if (villager.fome !== 0) {
                 villager.fome--;
                 villager.statusFome();
@@ -397,7 +400,9 @@ document.querySelector('.sacola').addEventListener("click", function (event) {
 
 
 /* ------------ Marketplace ------------ */
+
 function openMarket() {
+    menu.market = true;
     if (villager.vida !== 0) {
         document.querySelector(".home").style.opacity = 0.33;
         document.getElementById("marketplace").style.display = "block";
@@ -408,6 +413,7 @@ function openMarket() {
 }
 
 function closeMarket() {
+    menu.market = false;
     document.querySelector(".home").style.opacity = 1;
     document.getElementById("marketplace").style.display = "none";
     document.querySelector('input[type="radio"]:first-of-type').checked = true;
@@ -560,36 +566,37 @@ function comprarPicaretaN() {
 
 /* ------------ Caverna ------------ */
 
-let caveStatus = false;
 function openCave() {
-    caveStatus = true;
+    menu.cave = true;
     if (villager.vida !== 0) {
-        document.querySelector(".cave").style.display = "block";
-        document.querySelector(".sacola ul").style.display = "none";
-        document.querySelector(".personagem").style.display = "none";
-        document.getElementById("status").style.display = "none";
-        document.getElementById("bundle").style.display = "none";
-        document.querySelector(".carrinho").style.display = "none";
-        document.querySelector(".picareta").classList.remove("active");
-        closeMarket();
-        if (ferramenta.picaretaNetherite !== false) {
-            document.querySelector(".ore").classList.add("picaretaN");
-            document.querySelector(".picareta").title = "Picareta de Netherite (+4 esmeraldas)";
-            document.querySelector(".picareta").src = "assets/files/cave/picaretaN.png";
-        } else if (ferramenta.picaretaDiamante !== false) {
-            document.querySelector(".ore").classList.add("picaretaD");
-            document.querySelector(".picareta").title = "Picareta de Diamante (+2 esmeraldas)";
-            document.querySelector(".picareta").src = "assets/files/cave/picaretaD.png";
-        } else {
-            document.querySelector(".ore").classList.add("picaretaF");
-            document.querySelector(".picareta").title = "Picareta de Ferro (+1 esmeralda)";
-            document.querySelector(".picareta").src = "assets/files/cave/picaretaF.png";
+        if (marketStatus !== true) {
+            document.querySelector(".cave").style.display = "block";
+            document.querySelector(".sacola ul").style.display = "none";
+            document.querySelector(".personagem").style.display = "none";
+            document.getElementById("status").style.display = "none";
+            document.getElementById("bundle").style.display = "none";
+            document.querySelector(".carrinho").style.display = "none";
+            document.querySelector(".picareta").classList.remove("active");
+            closeMarket();
+            if (ferramenta.picaretaNetherite !== false) {
+                document.querySelector(".ore").classList.add("picaretaN");
+                document.querySelector(".picareta").title = "Picareta de Netherite (+4 esmeraldas)";
+                document.querySelector(".picareta").src = "assets/files/cave/picaretaN.png";
+            } else if (ferramenta.picaretaDiamante !== false) {
+                document.querySelector(".ore").classList.add("picaretaD");
+                document.querySelector(".picareta").title = "Picareta de Diamante (+2 esmeraldas)";
+                document.querySelector(".picareta").src = "assets/files/cave/picaretaD.png";
+            } else {
+                document.querySelector(".ore").classList.add("picaretaF");
+                document.querySelector(".picareta").title = "Picareta de Ferro (+1 esmeralda)";
+                document.querySelector(".picareta").src = "assets/files/cave/picaretaF.png";
+            }
         }
     }
 }
 
 function closeCave() {
-    caveStatus = false;
+    menu.cave = false;
     document.querySelector(".cave").style.display = "none"
     document.querySelector(".personagem").style.display = "block";
     document.getElementById("status").style.display = "block";
@@ -601,7 +608,6 @@ function closeCave() {
         inventario()
     }
 }
-
 
 function minerar() {
     if (ferramenta.picaretaNetherite !== false) {

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3b/Hero_of_the_Village_BE1.png">
+    <link rel="shortcut icon"
+        href="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3b/Hero_of_the_Village_BE1.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="assets/style.css">
     <title>Villager Life</title>
@@ -13,7 +14,7 @@
 
 <body>
     <main id="world">
-        <section class="cave"> 
+        <section class="cave">
             <div class="ore">
                 <div id="particulaMineracao"></div>
                 <img onclick="minerar()" src="assets/files/cave/esmeraldaCore.png">
@@ -44,31 +45,26 @@
                     <div class="balao">
                         <img src="assets/files/villager/balaoFala.png"><span></span>
                     </div>
-                    <img id="village" ondrop="drop(event)" ondragover="dragOver(event)"
-                        src="assets/files/villager/villager.gif">
+                    <img id="village" ondrop="drop(event)" ondragover="dragOver(event)" src="assets/files/villager/villager.gif">
                 </div>
                 <span class="pillager"></span>
                 <div class="inventario">
                     <div class="sacola">
                         <ul id="alimentos">
                             <li>
-                                <img id="beterrabaSacola" ondragstart="dragStart(event)" class="active"
-                                    title='Beterraba (+0.5 fome)' src="assets/files/foods/beterraba.png">
+                                <img id="beterrabaSacola" ondragstart="dragStart(event)" class="active" title='Beterraba (+0.5 fome)' src="assets/files/foods/beterraba.png">
                                 <p id="qntBeterraba"></p>
                             </li>
                             <li>
-                                <img id="batataSacola" ondragstart="dragStart(event)" class="active"
-                                    title="Batata (+1 fome)" src="assets/files/foods//batata.png">
+                                <img id="batataSacola" ondragstart="dragStart(event)" class="active" title="Batata (+1 fome)" src="assets/files/foods//batata.png">
                                 <p id="qntBatata"></p>
                             </li>
                             <li>
-                                <img id="cenouraSacola" ondragstart="dragStart(event)" class="active"
-                                    title="Cenoura (+2 fome)" src="assets/files/foods/cenoura.png">
+                                <img id="cenouraSacola" ondragstart="dragStart(event)" class="active" title="Cenoura (+2 fome)" src="assets/files/foods/cenoura.png">
                                 <p id="qntCenoura"></p>
                             </li>
                             <li>
-                                <img id="paoSacola" ondragstart="dragStart(event)" class="active" title="Pão (+3 fome)"
-                                    src="assets/files/foods/pao.png">
+                                <img id="paoSacola" ondragstart="dragStart(event)" class="active" title="Pão (+3 fome)" src="assets/files/foods/pao.png">
                                 <p id="qntPao"></p>
                             </li>
                         </ul>
@@ -123,7 +119,8 @@
 
                                     <!-- Inicio -->
                                     <div class="card">
-                                        <img onclick="comprarPao()" id="paoMarket" title="Pão (+3 fome)" class="centralizar active" src="assets/files/foods/pao.png">
+                                        <img onclick="comprarPao()" id="paoMarket" title="Pão (+3 fome)"
+                                            class="centralizar active" src="assets/files/foods/pao.png">
                                         <p>pao<br>3 (<img style="width: 14px;" src="assets/files/hunger/Fome_100.png"><img style="width: 14px;" src="assets/files/hunger/Fome_100.png"><img style="width: 14px;" src="assets/files/hunger/Fome_100.png">)</p>
                                         <div class="valor" onclick="comprarPao()">
                                             <p>12.5</p>
@@ -136,13 +133,16 @@
                             </div>
 
                             <input type="radio" id="ferramentas" name="abas">
-                            <label title="Ferramentas" for="ferramentas"><img src="assets/files/marketplace/goldenSword.png"></label>
+                            <label title="Ferramentas" for="ferramentas"><img
+                                    src="assets/files/marketplace/goldenSword.png"></label>
                             <div class="tab">
                                 <div class="cards">
                                     <!-- Inicio -->
                                     <div class="card">
                                         <img onclick="comprarPicaretaD()" id="picaretaDMarket" title="Picareta de Diamante (+2 esmeraldas)" class="centralizar active" src="assets/files/cave/diamondPickaxe.png">
-                                        <p>Picareta de Diamante<br>2 (<img style="width: 14px;" src="assets/files/cave/esmeralda.png"><img style="width: 14px;" src="assets/files/cave/esmeralda.png">)</p>
+                                        <p>Picareta de Diamante<br>2 (<img style="width: 14px;"
+                                                src="assets/files/cave/esmeralda.png"><img style="width: 14px;"
+                                                src="assets/files/cave/esmeralda.png">)</p>
                                         <div class="valor" onclick="comprarPicaretaD()">
                                             <p>250</p>
                                             <img src="assets/files/marketplace/esmeraldaCoin.png">&emsp;
@@ -153,7 +153,9 @@
 
                                     <!-- Inicio -->
                                     <div class="card">
-                                        <img onclick="comprarPicaretaN()" id="picaretaNMarket" title="Picareta de Netherite (+4 esmeraldas)" class="centralizar active" src="assets/files/cave/netheritePickaxe.png">
+                                        <img onclick="comprarPicaretaN()" id="picaretaNMarket"
+                                            title="Picareta de Netherite (+4 esmeraldas)" class="centralizar active"
+                                            src="assets/files/cave/netheritePickaxe.png">
                                         <p>Picareta de Netherite<br>4 (<img style="width: 14px;" src="assets/files/cave/esmeralda.png"><img style="width: 14px;" src="assets/files/cave/esmeralda.png"><img style="width: 14px;" src="assets/files/cave/esmeralda.png"><img style="width: 14px;" src="assets/files/cave/esmeralda.png">)</p>
                                         <div class="valor" onclick="comprarPicaretaN()">
                                             <p>1000</p>
