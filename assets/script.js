@@ -29,7 +29,7 @@ let villager = {
             document.querySelector(".carrinho").style.cursor = "not-allowed";
             document.querySelector(".picareta").style.cursor = "not-allowed";
             document.querySelector(".picareta").classList.remove("active");
-            document.querySelector(".carrinho").classList.remove("active");
+            document.querySelector(".picareta").classList.remove("active");
             document.querySelector("#bundle").style.opacity = 0.6;
             document.querySelector("#moedas").style.opacity = 0.6;
             closeMarket();
