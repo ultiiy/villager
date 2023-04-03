@@ -33,7 +33,7 @@ let villager = {
             document.querySelector(".home").style.opacity = 1;
             document.querySelector("#bundle").style.opacity = 0.6;
             document.querySelector("#moedas").style.opacity = 0.6;
-        closeCave();
+            closeCave();
         } else if (villager.vida <= 10) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V1.png">';
         } else if (villager.vida <= 20) {
