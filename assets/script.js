@@ -237,7 +237,7 @@ function alimentarBeterraba() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida <= 90) {
+            if (villager.vida < 101) {
                 villager.vida += 5;
                 villager.statusVida();
                 particulaHeart();
@@ -265,7 +265,7 @@ function alimentarBatata() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida <= 90) {
+            if (villager.vida < 101) {
                 villager.vida += 10;
                 villager.statusVida();
                 particulaHeart();
@@ -293,7 +293,7 @@ function alimentarCenoura() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida <= 90) {
+            if (villager.vida < 101) {
                 villager.vida += 20;
                 villager.statusVida();
                 particulaHeart();
@@ -321,7 +321,7 @@ function alimentarPao() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida <= 90) {
+            if (villager.vida < 101) {
                 villager.vida += 30;
                 villager.statusVida();
                 particulaHeart();
