@@ -131,7 +131,7 @@ setInterval(function () {
             particulaDamage();
         }
 
-        if (menu.cave === false) {
+        if (menu.cave !== true) {
             if (villager.fome !== 0) {
                 villager.fome--;
                 villager.statusFome();
