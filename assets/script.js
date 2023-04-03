@@ -152,24 +152,6 @@ setInterval(function () {
     }
 }, 8000)
 
-/* ------------ Abrir a sacola de comida ------------ */
-function inventario() {
-    if (villager.vida !== 0) {
-        let bundle = document.getElementById("bundle");
-        let itens = document.querySelector(".sacola ul");
-        if (bundle.src.match("assets/files/villager/bundle.png")) {
-            bundle.src = "assets/files/villager/openBundle.png";
-            itens.style.display = "block";
-        } else {
-            bundle.src = "assets/files/villager/bundle.png";
-            itens.style.display = "none";
-            document.querySelectorAll(".error").forEach(img => {
-                img.classList.remove("error");
-            });
-        }
-    }
-}
-
 /* ------------ Totem para recomeçar ------------ */
 function resetPage() {
     window.location.reload();
@@ -219,6 +201,24 @@ function aleatorizarParticulas() {
             image.remove();
         });
     }, 800);
+}
+
+/* ------------ Abrir a sacola de comida ------------ */
+function inventario() {
+    if (villager.vida !== 0) {
+        let bundle = document.getElementById("bundle");
+        let itens = document.querySelector(".sacola ul");
+        if (bundle.src.match("assets/files/villager/bundle.png")) {
+            bundle.src = "assets/files/villager/openBundle.png";
+            itens.style.display = "block";
+        } else {
+            bundle.src = "assets/files/villager/bundle.png";
+            itens.style.display = "none";
+            document.querySelectorAll(".error").forEach(img => {
+                img.classList.remove("error");
+            });
+        }
+    }
 }
 
 /* ------------ Alimentação do Villager ------------ */
