@@ -415,7 +415,7 @@ footer {
 
     #stsVida img,
     #stsFome img {
-        width: 190px;
+        width: 200px;
     }
 
     #moedas span {
@@ -423,15 +423,15 @@ footer {
     }
 
     #moedas img {
-        width: 26px;
+        width: 28px;
     }
 
     #moedas .carrinho {
-        width: 20px;
+        width: 22px;
     }
 
     #moedas .picareta {
-        width: 20px;
+        width: 22px;
     }
 
     #mensagem {
@@ -443,11 +443,11 @@ footer {
     }
 
     .personagem {
-        left: 42%;
+        left: 45%;
     }
 
     #village {
-        width: 350px;
+        width: 400px;
     }
 
     .pillager {
