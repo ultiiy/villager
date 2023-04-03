@@ -194,7 +194,7 @@ html {
 #particulas img {
     width: 16px;
     position: absolute;
-    animation: snow-fall 0.8s linear normal;
+    animation: snow-fall 0.75s linear normal;
 }
 
 .random-position {
@@ -209,7 +209,7 @@ html {
 
     100% {
         transform: translateY(-100%);
-        opacity: 0;
+        opacity: 0.2;
     }
 }
 
