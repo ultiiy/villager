@@ -21,18 +21,17 @@ let villager = {
             document.querySelector("#mensagem").textContent = "O villager morreu de fome";
             document.querySelector("#qntMoeda").textContent = 0;
             document.querySelector("#village").src = "assets/files/villager/death.png";
-            document.querySelector("#bundle").src = "assets/files/villager/bundle.png";
-            document.querySelector("#marketplace").style.display = "none";
+            document.querySelector("#bundle").src = "assets/files/villager/bundle.png";
             document.querySelector(".balao").style.display = "none";
             document.querySelector(".sacola ul").style.display = "none";
             document.querySelector("#bundle").style.cursor = "not-allowed";
             document.querySelector(".carrinho").style.cursor = "not-allowed";
             document.querySelector(".picareta").style.cursor = "not-allowed";
             document.querySelector(".carrinho").classList.remove("active");
-            document.querySelector(".picareta").classList.remove("active");
-            document.querySelector(".home").style.opacity = 1;
+            document.querySelector(".picareta").classList.remove("active");
             document.querySelector("#bundle").style.opacity = 0.6;
             document.querySelector("#moedas").style.opacity = 0.6;
+            closeMarket();
             closeCave();
         } else if (villager.vida <= 10) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V1.png">';
