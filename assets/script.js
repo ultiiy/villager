@@ -21,14 +21,14 @@ let villager = {
             document.querySelector("#mensagem").textContent = "O villager morreu de fome";
             document.querySelector("#qntMoeda").textContent = 0;
             document.querySelector("#village").src = "assets/files/villager/death.png";
-            document.querySelector("#bundle").src = "assets/files/villager/bundle.png";
+            document.querySelector("#bundle").src = "assets/files/villager/bundle.png";
             document.querySelector(".balao").style.display = "none";
             document.querySelector(".sacola ul").style.display = "none";
             document.querySelector("#bundle").style.cursor = "not-allowed";
             document.querySelector(".carrinho").style.cursor = "not-allowed";
             document.querySelector(".picareta").style.cursor = "not-allowed";
             document.querySelector(".carrinho").classList.remove("active");
-            document.querySelector(".picareta").classList.remove("active");
+            document.querySelector(".picareta").classList.remove("active");
             document.querySelector("#bundle").style.opacity = 0.6;
             document.querySelector("#moedas").style.opacity = 0.6;
             closeMarket();
@@ -118,16 +118,15 @@ for (var i = 0; i < elementoP.length; i++) {
     }
 }
 
-villager.exibir();
-villager.statusVida();
-villager.statusFome();
-
 /* ------------ Funções Temporarias ------------ */
 setInterval(function () {
     if (villager.vida !== 0) {
         if (villager.fome < 50) {
             villager.vida--;
             villager.statusVida();
+        }
+        if (villager.vida < 100 && villager.vida % 10 === 0) {
+            particulaDamage();
         }
         if (caveStatus === false) {
             if (villager.fome !== 0) {
@@ -137,6 +136,10 @@ setInterval(function () {
         }
     }
 }, 1400);
+
+villager.exibir();
+villager.statusVida();
+villager.statusFome();
 
 /* ------------ Balão de fome ------------ */
 setInterval(function () {
@@ -183,6 +186,16 @@ function particulaGlint() {
     img.src = 'assets/files/particles/glint.png';
     img.classList.add("random-position");
     for (var i = 0; i < 32; i++) {
+        document.querySelector("#particulas").appendChild(img.cloneNode());
+    }
+    aleatorizarParticulas();
+}
+
+function particulaDamage() {
+    var img = document.createElement("img");
+    img.src = 'assets/files/particles/damage.png';
+    img.classList.add("random-position");
+    for (var i = 0; i < 10; i++) {
         document.querySelector("#particulas").appendChild(img.cloneNode());
     }
     aleatorizarParticulas();
@@ -237,7 +250,7 @@ function alimentarBeterraba() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida < 101) {
+            if (villager.vida + 5 <= 100) {
                 villager.vida += 5;
                 villager.statusVida();
                 particulaHeart();
@@ -265,7 +278,7 @@ function alimentarBatata() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida < 101) {
+            if (villager.vida + 10 <= 100) {
                 villager.vida += 10;
                 villager.statusVida();
                 particulaHeart();
@@ -293,7 +306,7 @@ function alimentarCenoura() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida < 101) {
+            if (villager.vida + 20 <= 100) {
                 villager.vida += 20;
                 villager.statusVida();
                 particulaHeart();
@@ -321,7 +334,7 @@ function alimentarPao() {
             error.classList.add("error");
             particulaAngry();
         } else {
-            if (villager.vida < 101) {
+            if (villager.vida + 30 <= 100) {
                 villager.vida += 30;
                 villager.statusVida();
                 particulaHeart();
@@ -508,6 +521,7 @@ function comprarPicaretaD() {
         if (ferramenta.picaretaDiamante !== true) {
             villager.coins -= 250;
             ferramenta.picaretaDiamante = true;
+            document.querySelector(".picareta").src = "assets/files/cave/picaretaD.png";
             villager.exibir();
             particulaGlint();
         } else {
@@ -531,6 +545,7 @@ function comprarPicaretaN() {
         if (ferramenta.picaretaNetherite !== true) {
             villager.coins -= 1000;
             ferramenta.picaretaNetherite = true;
+            document.querySelector(".picareta").src = "assets/files/cave/picaretaN.png";
             villager.exibir();
             particulaGlint();
         } else {
@@ -548,21 +563,27 @@ function comprarPicaretaN() {
 let caveStatus = false;
 function openCave() {
     caveStatus = true;
-    if (villager.vida !== 0) { 
+    if (villager.vida !== 0) {
         document.querySelector(".cave").style.display = "block";
-        closeMarket ();
         document.querySelector(".sacola ul").style.display = "none";
         document.querySelector(".personagem").style.display = "none";
-        document.querySelector(".picareta").style.display = "none";
         document.getElementById("status").style.display = "none";
         document.getElementById("bundle").style.display = "none";
         document.querySelector(".carrinho").style.display = "none";
+        document.querySelector(".picareta").classList.remove("active");
+        closeMarket();
         if (ferramenta.picaretaNetherite !== false) {
             document.querySelector(".ore").classList.add("picaretaN");
+            document.querySelector(".picareta").title = "Picareta de Netherite (+4 esmeraldas)";
+            document.querySelector(".picareta").src = "assets/files/cave/picaretaN.png";
         } else if (ferramenta.picaretaDiamante !== false) {
             document.querySelector(".ore").classList.add("picaretaD");
+            document.querySelector(".picareta").title = "Picareta de Diamante (+2 esmeraldas)";
+            document.querySelector(".picareta").src = "assets/files/cave/picaretaD.png";
         } else {
             document.querySelector(".ore").classList.add("picaretaF");
+            document.querySelector(".picareta").title = "Picareta de Ferro (+1 esmeralda)";
+            document.querySelector(".picareta").src = "assets/files/cave/picaretaF.png";
         }
     }
 }
@@ -570,11 +591,12 @@ function openCave() {
 function closeCave() {
     caveStatus = false;
     document.querySelector(".cave").style.display = "none"
-    document.querySelector(".picareta").style.display = "block";
     document.querySelector(".personagem").style.display = "block";
     document.getElementById("status").style.display = "block";
     document.getElementById("bundle").style.display = "block";
     document.querySelector(".carrinho").style.display = "block";
+    document.querySelector(".picareta").title = "Mineração";
+    document.querySelector(".picareta").classList.add("active");
     if (document.getElementById("bundle").src = "assets/files/villager/openBundle.png") {
         inventario()
     }
