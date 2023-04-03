@@ -1,7 +1,7 @@
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 }
 let ferramenta = { picaretaDiamante: false, picaretaNetherite: false };
 let villager = {
-    vida: 100, fome: 100, coins: 0,
+    vida: 100, fome: 100, coins: 11110,
 
     exibir: function () {
         document.getElementById("qntMoeda").textContent = this.coins;
@@ -553,17 +553,17 @@ function openCave() {
         document.querySelector("#marketplace").style.display = "none";
         document.querySelector(".home").style.opacity = 1;
         document.querySelector(".sacola ul").style.display = "none";
+        document.querySelector(".personagem").style.display = "none";
         document.querySelector(".picareta").style.display = "none";
         document.getElementById("status").style.display = "none";
         document.getElementById("bundle").style.display = "none";
-        document.getElementById("village").style.display = "none";
         document.querySelector(".carrinho").style.display = "none";
         if (ferramenta.picaretaNetherite !== false) {
-            document.querySelector(".ore").style.cursor = 'url(/assets/files/cave/netheritePickaxe.png), default';
+            document.querySelector(".ore").classList.add("picaretaN");
         } else if (ferramenta.picaretaDiamante !== false) {
-            document.querySelector(".ore").style.cursor = 'url(/assets/files/cave/diamondPickaxe.png), default';
+            document.querySelector(".ore").classList.add("picaretaD");
         } else {
-            document.querySelector(".ore").style.cursor = 'url(/assets/files/cave/ironPickaxe.png), default';
+            document.querySelector(".ore").classList.add("picaretaF");
         }
     }
 }
@@ -572,10 +572,13 @@ function closeCave() {
     caveStatus = false;
     document.querySelector(".cave").style.display = "none"
     document.querySelector(".picareta").style.display = "block";
+    document.querySelector(".personagem").style.display = "block";
     document.getElementById("status").style.display = "block";
     document.getElementById("bundle").style.display = "block";
-    document.getElementById("village").style.display = "block";
     document.querySelector(".carrinho").style.display = "block";
+    if (document.getElementById("bundle").src = "assets/files/villager/openBundle.png") {
+        inventario()
+    }
 }
 
 
