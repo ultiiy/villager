@@ -80,8 +80,8 @@ let villager = {
         } else if (villager.fome <= 90) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F9.png">';
         } else if (villager.fome <= 100) {
+            this.vida = 100;
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F10.png">';
-            villager.vida = 100;
         }
     }
 };
@@ -586,24 +586,24 @@ function minerar() {
     if (ferramenta.picaretaNetherite !== false) {
         villager.coins += 4;
         villager.exibir();
-        particulaEsmeralda()
-        particulaEsmeralda()
-        particulaEsmeralda()
-        particulaEsmeralda()
+        particulaMineracao()
+        particulaMineracao()
+        particulaMineracao()
+        particulaMineracao()
     } else if (ferramenta.picaretaDiamante !== false) {
         villager.coins += 2;
         villager.exibir();
-        particulaEsmeralda()
-        particulaEsmeralda()
+        particulaMineracao()
+        particulaMineracao()
     } else {
         villager.coins++;
         villager.exibir();
-        particulaEsmeralda()
+        particulaMineracao()
     }
 }
 
-function particulaEsmeralda() {
-    var div = document.getElementById("particulaEsmerada");
+function particulaMineracao() {
+    var div = document.getElementById("particulaMineracao");
     var img = document.createElement("img");
     img.src = 'assets/files/cave/esmeraldaUm.png';
 

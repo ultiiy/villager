@@ -52,7 +52,7 @@ html {
 
 /*------------ Particulas ------------*/
 
-#particulaEsmerada {
+#particulaMineracao {
     position: fixed;
     bottom: 60%;
     left: 50%;
@@ -62,7 +62,7 @@ html {
     z-index: 2;
 }
 
-#particulaEsmerada img {
+#particulaMineracao img {
     width: 32px;
     animation: snow-fall 1s linear normal;
 }
