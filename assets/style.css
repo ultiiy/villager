@@ -23,6 +23,18 @@ html {
     display: none;
 }
 
+.picaretaF {
+    cursor: url('files/cave/ironPickaxe.png'), default;
+}
+
+.picaretaD {
+    cursor: url('files/cave/diamondPickaxe.png'), default;
+}
+
+.picaretaN {
+    cursor: url('files/cave/netheritePickaxe.png'), default;
+}
+
 .ore img {
     position: fixed;
     left: 0;
