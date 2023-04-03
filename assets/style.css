@@ -16,6 +16,72 @@ html {
     background-color: transparent;
 }
 
+/* ------ Section Cave ------*/
+/*------------ Minerio ------------*/
+
+.cave {
+    display: none;
+}
+
+.ore img {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 850%));
+    filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 95%));
+}
+
+.ore img:active {
+    transform: scale(0.96);
+}
+
+/*------------ Particulas ------------*/
+
+#particulaEsmerada {
+    position: fixed;
+    bottom: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+    z-index: 2;
+}
+
+#particulaEsmerada img {
+    width: 32px;
+    animation: snow-fall 1s linear normal;
+}
+
+@keyframes snow-fall {
+    0% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/*------------ close cave ------------*/
+
+.closeCave {
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.closeCave img {
+    width: 36px;
+    margin: 16px;
+}
+
+/* ------ Section Space ------*/
 /*------------ Menu principal ------------*/
 
 .menu {
@@ -31,6 +97,12 @@ html {
 }
 
 /*------------ Money ------------*/
+
+#moedas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 #moedas ul {
     list-style-type: none;
@@ -49,6 +121,11 @@ html {
 
 #moedas .carrinho {
     width: 32px;
+    margin-left: 8px;
+}
+
+#moedas .picareta {
+    width: 34px;
     margin-left: 8px;
 }
 
@@ -100,13 +177,13 @@ html {
     transform: translateX(-50%);
     width: 200px;
     height: 150px;
-    z-index: 6;
+    z-index: 5;
 }
 
 #particulas img {
     width: 16px;
     position: absolute;
-    animation: snow-fall 0.9s linear normal;
+    animation: snow-fall 0.8s linear normal;
 }
 
 .random-position {
@@ -133,7 +210,7 @@ html {
     bottom: 75%;
     left: 72.5%;
     transform: translateX(-50%);
-    z-index: 7;
+    z-index: 6;
 }
 
 .balao img {
@@ -201,6 +278,7 @@ html {
     width: 96px;
     -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
     filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 25%));
+    z-index: 3;
 }
 
 /*------------ Marketplace ------------*/
@@ -337,20 +415,23 @@ footer {
 
     #stsVida img,
     #stsFome img {
-        width: 200px;
+        width: 190px;
     }
 
     #moedas span {
-        color: #33b36d;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     #moedas img {
-        width: 32px;
+        width: 26px;
     }
 
     #moedas .carrinho {
-        width: 22px;
+        width: 20px;
+    }
+
+    #moedas .picareta {
+        width: 20px;
     }
 
     #mensagem {
@@ -367,6 +448,10 @@ footer {
 
     #village {
         width: 350px;
+    }
+
+    .pillager {
+        display: none;
     }
 
     .sacola {
