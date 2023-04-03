@@ -548,9 +548,8 @@ function comprarPicaretaN() {
 
 let caveStatus = false;
 function openCave() {
-    if (villager.vida !== 0) {
-        caveStatus = true;
-        document.querySelector(".cave").style.display = "block"
+    caveStatus = true;
+    if (villager.vida !== 0) { document.querySelector(".cave").style.display = "block"
         document.querySelector("#marketplace").style.display = "none";
         document.querySelector(".home").style.opacity = 1;
         document.querySelector(".sacola ul").style.display = "none";
