@@ -1,7 +1,7 @@
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 }
 let ferramenta = { picaretaDiamante: false, picaretaNetherite: false };
 let villager = {
-    vida: 100, fome: 100, coins: 11110,
+    vida: 100, fome: 100, coins: 0,
 
     exibir: function () {
         document.getElementById("qntMoeda").textContent = this.coins;
