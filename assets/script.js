@@ -569,7 +569,7 @@ function comprarPicaretaN() {
 function openCave() {
     menu.cave = true;
     if (villager.vida !== 0) {
-        if (marketStatus !== true) {
+        if (menu.market !== true) {
             document.querySelector(".cave").style.display = "block";
             document.querySelector(".sacola ul").style.display = "none";
             document.querySelector(".personagem").style.display = "none";
