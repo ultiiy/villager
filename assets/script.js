@@ -602,7 +602,7 @@ function minerar() {
 function particulaEsmeralda() {
     var div = document.getElementById("particulaEsmerada");
     var img = document.createElement("img");
-    img.src = "/assets/files/cave/esmeraldaUm.png";
+    img.src = 'assets/files/cave/esmeraldaUm.png';
 
     var width = div.offsetWidth - img.width;
     var height = div.offsetHeight - img.height;
