@@ -461,6 +461,10 @@ footer {
         width: 400px;
     }
 
+    .pillager img {
+        width: 96px;
+    }
+
     .sacola {
         margin: 18px;
     }
