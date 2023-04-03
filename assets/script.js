@@ -419,7 +419,7 @@ function comprarBeterraba() {
             villager.exibir();
             particulaGlint();
         } else {
-            var error = document.getElementById("paoMarket");
+            var error = document.getElementById("beterrabaMarket");
             error.classList.remove("error");
             void error.offsetWidth;
             error.classList.add("error");
@@ -442,7 +442,7 @@ function comprarBatata() {
             villager.exibir();
             particulaGlint();
         } else {
-            var error = document.getElementById("paoMarket");
+            var error = document.getElementById("batataMarket");
             error.classList.remove("error");
             void error.offsetWidth;
             error.classList.add("error");
@@ -465,7 +465,7 @@ function comprarCenoura() {
             villager.exibir();
             particulaGlint();
         } else {
-            var error = document.getElementById("paoMarket");
+            var error = document.getElementById("cenouraMarket");
             error.classList.remove("error");
             void error.offsetWidth;
             error.classList.add("error");
