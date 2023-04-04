@@ -216,7 +216,7 @@ function aleatorizarParticulas() {
         document.querySelectorAll(".random-position").forEach(image => {
             image.remove();
         });
-    }, 800);
+    }, 740);
 }
 
 /* ------------ Abrir a sacola de comida ------------ */
