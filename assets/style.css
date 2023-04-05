@@ -116,9 +116,9 @@ html {
 }
 
 .img {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+    position: fixed;
+    width: 150px;
+    height: 150px;
     background-image: url('files/villager/Pillager.gif');
     background-size: cover;
 }
