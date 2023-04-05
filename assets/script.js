@@ -744,6 +744,8 @@ function particulaMineracao() {
 /* ------ espada (abrir) ------*/
 const container = document.getElementById("container");
 let timer;
+let canGenerateImages = false;
+let numImages = 0;
 const coinsBySword = {
   "espadaNetherite": 4,
   "espadaDiamante": 2,
@@ -752,7 +754,6 @@ const coinsBySword = {
 
 function startInvasion() {
     menu.invasion = true;
-    numImages = 0;
     canGenerateImages = true;
     if (villager.vida !== 0) {
         if (menu.market !== true) {
@@ -778,11 +779,10 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
-            if (canGenerateImages = true) {
+         
             timer = setInterval(function () {
                 criarImagem();
             }, Math.floor(Math.random() * 1000) + 500);
-        }
         }
     }
 }
