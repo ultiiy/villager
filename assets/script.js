@@ -754,7 +754,6 @@ function startInvasion() {
     menu.invasion = true;
     if (villager.vida !== 0) {
         if (menu.market !== true) {
-            document.getElementById("qntMoeda").textContent = imageCount;
             document.querySelector("#invasion").style.display = "block";
             document.querySelector(".sacola ul").style.display = "none";
             document.querySelector(".personagem").style.display = "none";
@@ -804,7 +803,6 @@ setInterval(function () {
         if (imageCount !== 20) {
             criarImagem();
             imageCount++;
-            document.getElementById("qntMoeda").textContent = imageCount;
         }
     }
 }, Math.floor(Math.random() * 1000) + 500);
@@ -817,7 +815,7 @@ function criarImagem() {
     img.addEventListener("click", function () {
         img.remove();
         imageCount--;
-        document.getElementById("qntMoeda").textContent = imageCount;
+
     });
     container.appendChild(img);
 }
