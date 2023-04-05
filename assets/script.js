@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Codespaces
-Marketplace
-Explore
-
-@Ultiiy
-Ultiiy
-    /
-    villager
-Public
-Cannot fork because you own this repository and are not a member of any organizations.
-    Code
-Issues
-Pull requests
-Actions
-Wiki
-Security
-Insights
-Settings
-villager / assets / script.js /
-    @Ultiiy
-Ultiiy Update script.js
-Latest commit f1c75b5 3 minutes ago
-History
-1 contributor
-831 lines(778 sloc)  31.5 KB
-
-
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 }
 let ferramenta = { picaretaDiamante: false, espadaDiamante: false, picaretaNetherite: false, espadaNetherite: false };
 let menu = { market: false, cave: false, invasion: false };
