@@ -808,8 +808,7 @@ function criarImagem() {
   img.style.left = Math.random() * 90 + "%";
   img.addEventListener("click", function () {
     img.remove();
-    const coins = coinsBySword[ferramenta.tipo] || 1;
-    villager.coins += coins;
+    villager.coins += coinsBySword[ferramenta.tipo] || 1;
     villager.exibir();
   });
   container.appendChild(img);
