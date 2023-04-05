@@ -778,16 +778,6 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
-
-            timer = setInterval(function () {
-                if (imageCount !== 20) {
-                    criarImagem();
-                    imageCount++;
-                    document.getElementById("qntMoeda").textContent = imageCount;
-                } else {
-                    clearInterval(timer);
-                }
-            }, Math.floor(Math.random() * 1000) + 500);
         }
     }
 }
@@ -809,6 +799,16 @@ function stopInvasion() {
     clearInterval(timer);
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
+
+timer = setInterval(function () {
+    if (imageCount !== 20) {
+        criarImagem();
+        imageCount++;
+        document.getElementById("qntMoeda").textContent = imageCount;
+    } else {
+        clearInterval(timer);
+    }
+}, Math.floor(Math.random() * 1000) + 500);
 
 function criarImagem() {
     const img = document.createElement("div");
