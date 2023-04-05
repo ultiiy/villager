@@ -800,7 +800,7 @@ function stopInvasion() {
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
 
-timer = setInterval(function () {
+setInterval(function () {
     if (imageCount !== 20) {
         criarImagem();
         imageCount++;
