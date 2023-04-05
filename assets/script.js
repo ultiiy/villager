@@ -822,6 +822,8 @@ function criarImagem() {
     if (numImages >= 20) {
       canGenerateImages = false;
       clearInterval(timer);
+    } else {
+        canGenerateImages = true;
     }
   }
 }
