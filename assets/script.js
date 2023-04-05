@@ -752,6 +752,8 @@ const coinsBySword = {
 
 function startInvasion() {
     menu.invasion = true;
+    numImages = 0;
+    canGenerateImages = true;
     if (villager.vida !== 0) {
         if (menu.market !== true) {
             document.querySelector("#invasion").style.display = "block";
@@ -776,9 +778,11 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
+            if (canGenerateImages = true) {
             timer = setInterval(function () {
                 criarImagem();
             }, Math.floor(Math.random() * 1000) + 500);
+        }
         }
     }
 }
@@ -802,16 +806,24 @@ function stopInvasion() {
 }
 
 function criarImagem() {
-  var img = document.createElement("div");
-  img.classList.add("img", "atack");
-  img.style.top = Math.random() * 90 + "%";
-  img.style.left = Math.random() * 90 + "%";
-  img.addEventListener("click", function () {
-    img.remove();
-    villager.coins += coinsBySword[ferramenta.tipo] || 1;
-    villager.exibir();
-  });
-  container.appendChild(img);
+  if (canGenerateImages) {
+    var img = document.createElement("div");
+    img.classList.add("img", "atack");
+    img.style.top = Math.random() * 90 + "%";
+    img.style.left = Math.random() * 90 + "%";
+    img.addEventListener("click", function () {
+      img.remove();
+      const coins = coinsBySword[ferramenta.tipo] || 1;
+      villager.coins += coins;
+      villager.exibir();
+    });
+    container.appendChild(img);
+    numImages++;
+    if (numImages >= 20) {
+      canGenerateImages = false;
+      clearInterval(timer);
+    }
+  }
 }
 
 setTimeout(criarImagem, 1000);
