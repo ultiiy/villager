@@ -744,7 +744,6 @@ function particulaMineracao() {
 /* ------ espada (abrir) ------*/
 const container = document.getElementById("container");
 let timer;
-const MAX_IMAGES = 20;
 let imageCount = 0;
 const coinsBySword = {
     "espadaNetherite": 4,
@@ -780,7 +779,7 @@ function startInvasion() {
             }
 
             timer = setInterval(function () {
-                if (imageCount < MAX_IMAGES) {
+                if (imageCount !== 20) {
                     criarImagem();
                     imageCount++;
                 } else {
