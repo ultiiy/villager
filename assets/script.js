@@ -785,6 +785,7 @@ function startInvasion() {
 /* ------ espada (fechar) ------*/
 function stopInvasion() {
     menu.invasion = false;
+    imageCount = 0;
     document.querySelector("#invasion").style.display = "none"
     document.querySelector(".personagem").style.display = "block";
     document.getElementById("status").style.display = "block";
@@ -800,7 +801,7 @@ function stopInvasion() {
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
 
-setInterval(function () {
+timer = setInterval(function () {
     if (imageCount !== 20) {
         criarImagem();
         imageCount++;
