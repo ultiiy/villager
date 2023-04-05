@@ -742,8 +742,13 @@ function particulaMineracao() {
 
 /* ------------ Invasão ------------ */
 /* ------ espada (abrir) ------*/
-var container = document.getElementById("container");
-var timer;
+const container = document.getElementById("container");
+const timer;
+const coinsBySword = {
+  "espadaNetherite": 4,
+  "espadaDiamante": 2,
+  "espadaFerro": 1,
+};
 
 function startInvasion() {
     menu.invasion = true;
@@ -759,21 +764,21 @@ function startInvasion() {
             document.querySelector(".espada").classList.remove("active");
             closeMarket();
             if (ferramenta.espadaNetherite !== false) {
-                document.getElementById("container").classList.add("espadaN");
+                container.classList.add("espadaN");
                 document.querySelector(".espada").title = "Espada de Netherite (+4 esmeraldas)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaN.png";
             } else if (ferramenta.espadaDiamante !== false) {
-                document.getElementById("container").classList.add("espadaD");
+                container.classList.add("espadaD");
                 document.querySelector(".espada").title = "Espada de Diamante (+2 esmeraldas)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaD.png";
             } else {
-                document.getElementById("container").classList.add("espadaF");
+                container.classList.add("espadaF");
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
             timer = setInterval(function () {
                 criarImagem();
-            }, Math.random() * 3000);
+            }, Math.floor(Math.random() * 1000) + 500);
         }
     }
 }
@@ -797,29 +802,23 @@ function stopInvasion() {
 }
 
 function criarImagem() {
-    var img = document.createElement("div");
-    img.className = "img";
-    img.classList.add("atack");
-    img.style.top = Math.floor(Math.random() * 90) + "%";
-    img.style.left = Math.floor(Math.random() * 90) + "%";
-    img.addEventListener("click", function () {
-        img.remove();
-        if (ferramenta.espadaNetherite !== false) {
-            villager.coins += 4;
-            villager.exibir();
-        } else if (ferramenta.espadaDiamante !== false) {
-            villager.coins += 2;
-            villager.exibir();
-        } else {
-            villager.coins++;
-            villager.exibir();
-        }
-    });
-    container.appendChild(img);
+  var img = document.createElement("div");
+  img.classList.add("img", "atack");
+  img.style.top = Math.random() * 90 + "%";
+  img.style.left = Math.random() * 90 + "%";
+  img.addEventListener("click", function () {
+    img.remove();
+    const coins = coinsBySword[ferramenta.tipo] || 1;
+    villager.coins += coins;
+    villager.exibir();
+  });
+  container.appendChild(img);
 }
 
+setTimeout(criarImagem, 1000);
+
 container.addEventListener("click", function (event) {
-    if (event.target.classList.contains("img")) {
-        event.target.remove();
-    }
+  if (event.target.classList.contains("img")) {
+    event.target.remove();
+  }
 });
