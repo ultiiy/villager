@@ -743,7 +743,7 @@ function particulaMineracao() {
 /* ------------ Invasão ------------ */
 /* ------ espada (abrir) ------*/
 const container = document.getElementById("container");
-const timer;
+let timer;
 const coinsBySword = {
   "espadaNetherite": 4,
   "espadaDiamante": 2,
@@ -776,7 +776,7 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
-            timer = setInterval(function () {
+            timer = setTimeout(function () {
                 criarImagem();
             }, Math.floor(Math.random() * 1000) + 500);
         }
