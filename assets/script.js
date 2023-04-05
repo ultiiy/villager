@@ -773,7 +773,7 @@ function startInvasion() {
             }
             timer = setInterval(function () {
                 criarImagem();
-            }, Math.random() * 3500 + 1000);
+            }, Math.random() * 3500 + 500);
         }
     }
 }
