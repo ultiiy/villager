@@ -800,10 +800,12 @@ function stopInvasion() {
 }
 
 setInterval(function () {
-    if (imageCount !== 20) {
-        criarImagem();
-        imageCount++;
-        document.getElementById("qntMoeda").textContent = imageCount;
+    if (menu.invasion !== false) {
+        if (imageCount !== 20) {
+            criarImagem();
+            imageCount++;
+            document.getElementById("qntMoeda").textContent = imageCount;
+        }
     }
 }, Math.floor(Math.random() * 1000) + 500);
 
