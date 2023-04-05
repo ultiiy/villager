@@ -815,7 +815,17 @@ function criarImagem() {
     img.addEventListener("click", function () {
         img.remove();
         imageCount--;
-
+        villager.coins++;
+        if (ferramenta.espadaNetherite !== false) {
+            villager.coins += 4;
+            villager.exibir();
+        } else if (ferramenta.espadaDiamante !== false) {
+            villager.coins += 2;
+            villager.exibir();
+        } else {
+            villager.coins++;
+            villager.exibir();
+        }
     });
     container.appendChild(img);
 }
