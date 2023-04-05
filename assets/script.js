@@ -743,7 +743,6 @@ function particulaMineracao() {
 /* ------------ Invasão ------------ */
 /* ------ espada (abrir) ------*/
 const container = document.getElementById("container");
-let timer;
 let imageCount = 0;
 const coinsBySword = {
     "espadaNetherite": 4,
@@ -797,17 +796,14 @@ function stopInvasion() {
     if (document.getElementById("bundle").src = "assets/files/villager/openBundle.png") {
         inventario()
     }
-    clearInterval(timer);
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
 
-timer = setInterval(function () {
+setInterval(function () {
     if (imageCount !== 20) {
         criarImagem();
         imageCount++;
         document.getElementById("qntMoeda").textContent = imageCount;
-    } else {
-        clearInterval(timer);
     }
 }, Math.floor(Math.random() * 1000) + 500);
 
