@@ -776,7 +776,7 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
-            timer = setTimeout(function () {
+            timer = setInterval(function () {
                 criarImagem();
             }, Math.floor(Math.random() * 1000) + 500);
         }
