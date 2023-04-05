@@ -744,8 +744,8 @@ function particulaMineracao() {
 /* ------ espada (abrir) ------*/
 const container = document.getElementById("container");
 let timer;
-let canGenerateImages = false;
-let numImages = 0;
+const MAX_IMAGES = 20;
+let imageCount = 0;
 const coinsBySword = {
   "espadaNetherite": 4,
   "espadaDiamante": 2,
@@ -780,10 +780,14 @@ function startInvasion() {
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
          
-            timer = setInterval(function () {
-                criarImagem();
-            }, Math.floor(Math.random() * 1000) + 500);
-        }
+             timer = setInterval(function () {
+    if (imageCount < MAX_IMAGES) {
+      createImage();
+      imageCount++;
+    } else {
+      clearInterval(timer);
+    }
+  }, Math.floor(Math.random() * 1000) + 500);
     }
 }
 
@@ -805,28 +809,16 @@ function stopInvasion() {
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
 
-function criarImagem() {
-  if (canGenerateImages) {
-    var img = document.createElement("div");
-    img.classList.add("img", "atack");
-    img.style.top = Math.random() * 90 + "%";
-    img.style.left = Math.random() * 90 + "%";
-    img.addEventListener("click", function () {
-      img.remove();
-      const coins = coinsBySword[ferramenta.tipo] || 1;
-      villager.coins += coins;
-      numImages--;
-      villager.exibir();
-    });
-    container.appendChild(img);
-    numImages++;
-    if (numImages === 20) {
-      canGenerateImages = false;
-      clearInterval(timer);
-    } else {
-        canGenerateImages = true;
-    }
-  }
+function createImage() {
+  const img = document.createElement("div");
+  img.classList.add("img");
+  img.style.top = Math.random() * 90 + "%";
+  img.style.left = Math.random() * 90 + "%";
+  img.addEventListener("click", function () {
+    img.remove();
+    imageCount--;
+  });
+  container.appendChild(img);
 }
 
 setTimeout(criarImagem, 1000);
