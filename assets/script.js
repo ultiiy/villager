@@ -826,5 +826,6 @@ setTimeout(criarImagem, 1000);
 container.addEventListener("click", function (event) {
     if (event.target.classList.contains("img")) {
         event.target.remove();
+        imageCount--;
     }
 });
