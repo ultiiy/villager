@@ -820,7 +820,7 @@ function criarImagem() {
     });
     container.appendChild(img);
     numImages++;
-    if (numImages >= 20) {
+    if (numImages === 20) {
       canGenerateImages = false;
       clearInterval(timer);
     } else {
