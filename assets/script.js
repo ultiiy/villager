@@ -789,6 +789,7 @@ function startInvasion() {
     }
   }, Math.floor(Math.random() * 1000) + 500);
     }
+    }
 }
 
 /* ------ espada (fechar) ------*/
