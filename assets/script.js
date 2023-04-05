@@ -815,7 +815,6 @@ function criarImagem() {
     img.addEventListener("click", function () {
         img.remove();
         imageCount--;
-        villager.coins++;
         if (ferramenta.espadaNetherite !== false) {
             villager.coins += 4;
             villager.exibir();
