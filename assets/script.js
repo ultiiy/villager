@@ -815,6 +815,7 @@ function criarImagem() {
       img.remove();
       const coins = coinsBySword[ferramenta.tipo] || 1;
       villager.coins += coins;
+      numImages--;
       villager.exibir();
     });
     container.appendChild(img);
