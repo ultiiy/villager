@@ -781,7 +781,7 @@ function startInvasion() {
 
             timer = setInterval(function () {
                 if (imageCount < MAX_IMAGES) {
-                    createImage();
+                    criarImagem();
                     imageCount++;
                 } else {
                     clearInterval(timer);
@@ -809,7 +809,7 @@ function stopInvasion() {
     document.querySelectorAll(".img").forEach(function (imagem) { imagem.remove() });
 }
 
-function createImage() {
+function criarImagem() {
     const img = document.createElement("div");
     img.classList.add("img");
     img.style.top = Math.random() * 90 + "%";
@@ -826,6 +826,5 @@ setTimeout(criarImagem, 1000);
 container.addEventListener("click", function (event) {
     if (event.target.classList.contains("img")) {
         event.target.remove();
-        imageCount--;
     }
 });
