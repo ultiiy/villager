@@ -1,3 +1,34 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+
+@Ultiiy
+Ultiiy
+    /
+    villager
+Public
+Cannot fork because you own this repository and are not a member of any organizations.
+    Code
+Issues
+Pull requests
+Actions
+Wiki
+Security
+Insights
+Settings
+villager / assets / script.js /
+    @Ultiiy
+Ultiiy Update script.js
+Latest commit f1c75b5 3 minutes ago
+History
+1 contributor
+831 lines(778 sloc)  31.5 KB
+
+
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 }
 let ferramenta = { picaretaDiamante: false, espadaDiamante: false, picaretaNetherite: false, espadaNetherite: false };
 let menu = { market: false, cave: false, invasion: false };
@@ -747,14 +778,13 @@ let timer;
 const MAX_IMAGES = 20;
 let imageCount = 0;
 const coinsBySword = {
-  "espadaNetherite": 4,
-  "espadaDiamante": 2,
-  "espadaFerro": 1,
+    "espadaNetherite": 4,
+    "espadaDiamante": 2,
+    "espadaFerro": 1,
 };
 
 function startInvasion() {
     menu.invasion = true;
-    canGenerateImages = true;
     if (villager.vida !== 0) {
         if (menu.market !== true) {
             document.querySelector("#invasion").style.display = "block";
@@ -779,16 +809,16 @@ function startInvasion() {
                 document.querySelector(".espada").title = "Espada de Ferro (+1 esmeralda)";
                 document.querySelector(".espada").src = "assets/files/invasion/espadaF.png";
             }
-         
-             timer = setInterval(function () {
-    if (imageCount < MAX_IMAGES) {
-      createImage();
-      imageCount++;
-    } else {
-      clearInterval(timer);
-    }
-  }, Math.floor(Math.random() * 1000) + 500);
-    }
+
+            timer = setInterval(function () {
+                if (imageCount < MAX_IMAGES) {
+                    createImage();
+                    imageCount++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, Math.floor(Math.random() * 1000) + 500);
+        }
     }
 }
 
@@ -811,21 +841,21 @@ function stopInvasion() {
 }
 
 function createImage() {
-  const img = document.createElement("div");
-  img.classList.add("img");
-  img.style.top = Math.random() * 90 + "%";
-  img.style.left = Math.random() * 90 + "%";
-  img.addEventListener("click", function () {
-    img.remove();
-    imageCount--;
-  });
-  container.appendChild(img);
+    const img = document.createElement("div");
+    img.classList.add("img");
+    img.style.top = Math.random() * 90 + "%";
+    img.style.left = Math.random() * 90 + "%";
+    img.addEventListener("click", function () {
+        img.remove();
+        imageCount--;
+    });
+    container.appendChild(img);
 }
 
 setTimeout(criarImagem, 1000);
 
 container.addEventListener("click", function (event) {
-  if (event.target.classList.contains("img")) {
-    event.target.remove();
-  }
+    if (event.target.classList.contains("img")) {
+        event.target.remove();
+    }
 });
