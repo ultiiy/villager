@@ -7,8 +7,6 @@
   <p>UM JOGO <b>NÃO OFICIAL</b> DE <a href="https://www.minecraft.net/pt-br">MINECRAFT</a>.</p>
 </div>
 
-<img alt="Repository size" src="https://img.shields.io/github/repo-size/Ultiiy/villager?color=56BEB8">
-
 <div align="center">
   <img title="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img title="CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
