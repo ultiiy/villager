@@ -42,8 +42,8 @@ html {
     top: 0;
     bottom: 0;
     margin: auto;
-    -webkit-filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 850%));
-    filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 95%));
+    -webkit-filter: drop-shadow(2px 8px 10px rgba(0 0 0 / 60%));
+    filter: drop-shadow(2px 8px 10px rgba(0 0 0 / 50%));
 }
 
 #ore img:active {
