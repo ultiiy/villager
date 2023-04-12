@@ -126,7 +126,7 @@ html {
 }
 
 .atack:active {
-    animation: backOutDown 0.5s;
+    animation: rubberBand 0.2s;
 }
 
 /* ------------------------ Section Overworld ------------------------*/
