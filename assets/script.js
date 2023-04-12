@@ -1,10 +1,9 @@
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 };
 let ferramenta = { picaretaDiamante: false, espadaDiamante: false, picaretaNetherite: false, espadaNetherite: false };
 let menu = { market: false, cave: false, invasion: false };
-let villager = {
-    vida: 100, fome: 100, coins: 0,
+let villager = { vida: 100, fome: 100, coins: 0,
 
-    /* ------ sistema de atualização dos mantimentos ------*/
+    /* ------ sistema que atualiza os mantimentos ------*/
     exibir: function () {
         document.getElementById("qntMoeda").textContent = this.coins;
         document.getElementById("qntBeterraba").textContent = `x${alimento.beterraba}`;
@@ -17,11 +16,6 @@ let villager = {
     statusVida: function () {
         document.getElementById("stsVida").title = `Vida: ${this.vida}%`;
 
-        if (this.vida % 10 === 0) {
-            const imagemVida = `V${Math.floor(this.vida / 10)}.png`;
-            document.getElementById("stsVida").innerHTML = `<img src="assets/files/life/${imagemVida}">`;
-        }
-
         if (this.vida === 0) {
             document.querySelector("#village").src = "assets/files/villager/death.png";
             document.querySelector(".pillager").innerHTML = '<img src="assets/files/villager/Pillager.gif">';
@@ -30,6 +24,26 @@ let villager = {
             document.querySelector("#moedas").style.opacity = 0.6;
             closeMarket();
             closeCave();
+        } else if (villager.vida <= 10) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V1.png">';
+        } else if (villager.vida <= 20) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V2.png">';
+        } else if (villager.vida <= 30) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V3.png">';
+        } else if (villager.vida <= 40) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V4.png">';
+        } else if (villager.vida <= 50) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V5.png">';
+        } else if (villager.vida <= 60) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V6.png">';
+        } else if (villager.vida <= 70) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V7.png">';
+        } else if (villager.vida <= 80) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V8.png">';
+        } else if (villager.vida <= 90) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V9.png">';
+        } else if (villager.vida <= 100) {
+            document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V10.png">';
         }
     },
 
@@ -37,9 +51,29 @@ let villager = {
     statusFome: function () {
         document.getElementById("stsFome").title = `Fome: ${this.fome}%`;
 
-        if (this.fome % 10 === 0) {
-            const imagemFome = `F${Math.floor(this.fome / 10)}.png`;
-            document.getElementById("stsFome").innerHTML = `<img src="assets/files/hunger/${imagemFome}">`;
+        if (villager.fome <= 0) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F0.png">';
+        } else if (villager.fome <= 10) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F1.png">';
+        } else if (villager.fome <= 20) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F2.png">';
+        } else if (villager.fome <= 30) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F3.png">';
+        } else if (villager.fome <= 40) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F4.png">';
+        } else if (villager.fome <= 50) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F5.png">';
+        } else if (villager.fome <= 60) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F6.png">';
+        } else if (villager.fome <= 70) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F7.png">';
+        } else if (villager.fome <= 80) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F8.png">';
+        } else if (villager.fome <= 90) {
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F9.png">';
+        } else if (villager.fome <= 100) {
+            this.vida = 100;
+            document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F10.png">';
         }
     }
 };
