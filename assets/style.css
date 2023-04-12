@@ -1,0 +1,528 @@
+@font-face {
+    font-family: 'Minercraftory';
+    src: url('files/Minercraftory.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Minercraftory";
+}
+
+html {
+    cursor: url('files/cursor/cursorCross.png'), default;
+    background-color: transparent;
+}
+
+/* ------------------------ Section Cave ------------------------*/
+/*------ configs ------*/
+#cave {
+    display: none;
+}
+
+.picaretaF {
+    cursor: url('files/cursor/picaretaFC.png'), default;
+}
+
+.picaretaD {
+    cursor: url('files/cursor/picaretaDC.png'), default;
+}
+
+.picaretaN {
+    cursor: url('files/cursor/picaretaNC.png'), default;
+}
+
+/*------ minerio ------*/
+#ore img {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 850%));
+    filter: drop-shadow(5px 10px 20px rgba(0 0 0 / 95%));
+}
+
+#ore img:active {
+    transform: scale(0.96);
+}
+
+/*------ particulas de mineração ------*/
+#particulaMineracao {
+    position: fixed;
+    bottom: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 150px;
+}
+
+#particulaMineracao img {
+    width: 32px;
+    animation: snow-fall 1s linear normal;
+}
+
+@keyframes snow-fall {
+    0% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+/*------ close ------*/
+.closeCI {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.closeCI img {
+    width: 36px;
+    margin: 16px;
+}
+
+/* ------------------------ Section Invasion ------------------------*/
+/*------ configs ------*/
+#invasion {
+    display: none;
+}
+
+.espadaF {
+    cursor: url('files/cursor/espadaFC.png'), default;
+}
+
+.espadaD {
+    cursor: url('files/cursor/espadaDC.png'), default;
+}
+
+.espadaN {
+    cursor: url('files/cursor/espadaNC.png'), default;
+}
+
+/*------ ataque ------*/
+#container {
+    position: fixed;
+    width: 85%;
+    height: 85%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.img {
+    position: fixed;
+    width: 110px;
+    height: 110px;
+    background-image: url('files/villager/Pillager.gif');
+    background-size: cover;
+}
+
+.atack:active {
+    animation: backOutDown 0.5s;
+}
+
+/* ------------------------ Section Overworld ------------------------*/
+/*------ menu ------*/
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 44px;
+}
+
+#stsVida img,
+#stsFome img {
+    width: 300px;
+}
+
+#moedas ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+#moedas span {
+    color: #33b36d;
+    font-size: 32px;
+}
+
+#moedas img {
+    width: 42px;
+}
+
+#moedas .carrinho {
+    width: 32px;
+    margin-left: 8px;
+    margin-right: 6px;
+}
+
+#moedas .picareta {
+    width: 32px;
+}
+
+#moedas .espada {
+    width: 34px;
+}
+
+/*------------ alertas ------------*/
+#mensagem {
+    font-size: 32px;
+    text-align: center;
+}
+
+.reset {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.reset img {
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 45%));
+}
+
+/*------ animações ------*/
+.error {
+    animation: headShake 1.4s;
+}
+
+.active {
+    cursor: url('files/cursor/cursor.png'), default;
+}
+
+.active:active {
+    transform: scale(0.86);
+}
+
+/*------ villager ------*/
+.personagem {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/*------ particulas ------*/
+#particulas {
+    position: fixed;
+    bottom: 75%;
+    left: 51.5%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 120px;
+    z-index: 5;
+}
+
+#particulas img {
+    width: 16px;
+    animation: snow-fall 0.8s;
+}
+
+/*------ balão de fome ------*/
+.balao {
+    display: none;
+    position: fixed;
+    bottom: 75%;
+    left: 72.5%;
+    transform: translateX(-50%);
+    z-index: 6;
+}
+
+.balao img {
+    width: 128px;
+}
+
+.balao span {
+    position: fixed;
+    bottom: 37%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balao span img {
+    width: 52px;
+}
+
+/*------ pillager suspeito ------*/
+.pillager {
+    position: fixed;
+    bottom: 0;
+    left: -15px;
+}
+
+.pillager img {
+    width: 128px;
+}
+
+/*------ sacola de comida ------*/
+.inventario {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.sacola {
+    cursor: url('files/cursor/cursor.png'), default;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 64px;
+}
+
+.sacola ul {
+    display: none;
+    list-style: none;
+    margin-right: 18px;
+}
+
+.sacola li img {
+    width: 55px;
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 25%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+}
+
+.sacola li p {
+    text-align: end;
+    margin-bottom: 12px;
+}
+
+#bundle {
+    width: 96px;
+    -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 35%));
+    filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 25%));
+    z-index: 3;
+}
+
+/*------ mercado ------*/
+#marketplace {
+    display: none;
+    background-image: url('files/marketplace/fundoMercado.png');
+    background-size: cover;
+    position: fixed;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.market {
+    width: 700px;
+    height: 374px;
+}
+
+.close {
+    position: absolute;
+    left: 93.6%;
+    top: 3%;
+    width: 32px;
+    border-radius: 4px;
+    z-index: 9;
+}
+
+.conteudo {
+    position: relative;
+    bottom: -3.4%;
+}
+
+.abas {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 674px;
+    margin: auto;
+}
+
+.abas input[type="radio"] {
+    display: none;
+}
+
+.abas label {
+    cursor: url('files/cursor/cursor.png'), default;
+    padding: 15px;
+    background: #e2e2e2;
+    margin-right: 6px;
+    border-radius: 6px 6px 0 0;
+}
+
+.abas label img {
+    width: 32px;
+}
+
+.abas .tab {
+    width: 100%;
+    background: #fff;
+    order: 1;
+    display: none;
+    height: 287px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.abas .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 12px;
+    max-width: 674px;
+}
+
+.abas .card {
+    margin: 6px;
+    width: 96px;
+    max-width: 128px;
+}
+
+.abas .card p {
+    margin-bottom: 6px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+.centralizar {
+    display: flex;
+    margin: auto;
+}
+
+.abas .card .imgMarket {
+    width: 56px;
+}
+
+.abas .valor {
+    cursor: url('files/cursor/cursor.png'), default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px 0 6px;
+}
+
+.abas .valor p {
+    margin-right: 2px;
+}
+
+.abas .valor img {
+    width: 18px;
+}
+
+.abas input[type='radio']:checked+label+.tab {
+    display: block;
+}
+
+.abas input[type="radio"]:checked+label {
+    background: #fff;
+}
+
+/*------ footer ------*/
+footer {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 12px;
+    font-size: 14px;
+}
+
+/*------ mobile ------*/
+@media(max-width: 768px) {
+    .menu {
+        justify-content: space-between;
+        margin: 18px;
+    }
+
+    #stsVida img,
+    #stsFome img {
+        width: 200px;
+    }
+
+    #moedas span {
+        font-size: 20px;
+    }
+
+    #moedas img {
+        width: 28px;
+    }
+
+    #moedas .carrinho {
+        width: 22px;
+    }
+
+    #moedas .picareta {
+        width: 22px;
+    }
+
+    #moedas .espada {
+        width: 24px;
+    }
+
+    #mensagem {
+        font-size: 16px;
+    }
+
+    #reset img {
+        width: 40px;
+    }
+
+    .personagem {
+        left: 40%;
+    }
+
+    #village {
+        width: 400px;
+    }
+
+    .pillager img {
+        width: 96px;
+    }
+
+    .sacola {
+        margin: 18px;
+    }
+
+    .sacola li img {
+        width: 40px;
+    }
+
+    #bundle {
+        width: 70px;
+    }
+
+    #marketplace {
+        top: 40%;
+    }
+
+    .market {
+        width: 360px;
+    }
+
+    .close {
+        left: 90%;
+    }
+
+    .abas {
+        background-color: transparent;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin-left: 10px;
+    }
+
+    .abas .tab {
+        border-radius: 0 0 0 6px;
+    }
+
+    .abas .card .imgMarket {
+        width: 42px;
+    }
+
+    .abas .card p {
+        font-size: 14px;
+    }
+
+    footer {
+        font-size: 8px;
+        margin: 6px;
+    }
+}
