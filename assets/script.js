@@ -1,7 +1,8 @@
 let alimento = { beterraba: 12, cenoura: 12, batata: 12, pao: 3 };
 let ferramenta = { picaretaDiamante: false, espadaDiamante: false, picaretaNetherite: false, espadaNetherite: false };
 let menu = { market: false, cave: false, invasion: false };
-let villager = { vida: 100, fome: 100, coins: 0,
+let villager = {
+    vida: 100, fome: 100, coins: 0,
 
     /* ------ sistema que atualiza os mantimentos ------*/
     exibir: function () {
@@ -268,7 +269,7 @@ function alimentarBeterraba() {
         if (villager.fome + 5 >= 100) {
             exibirErro("beterrabaSacola");
         } else {
-            if (villager.vida + 5 <= 101) {
+            if (villager.vida + 5 <= 100) {
                 villager.vida += 5;
                 villager.statusVida();
                 particulaHeart();
@@ -289,7 +290,7 @@ function alimentarBatata() {
         if (villager.fome + 10 >= 100) {
             exibirErro("batataSacola");
         } else {
-            if (villager.vida + 10 <= 101) {
+            if (villager.vida + 10 <= 100) {
                 villager.vida += 10;
                 villager.statusVida();
                 particulaHeart();
@@ -310,7 +311,7 @@ function alimentarCenoura() {
         if (villager.fome + 20 >= 100) {
             exibirErro("cenouraSacola");
         } else {
-            if (villager.vida + 20 <= 101) {
+            if (villager.vida + 20 <= 100) {
                 villager.vida += 20;
                 villager.statusVida();
                 particulaHeart();
@@ -331,7 +332,7 @@ function alimentarPao() {
         if (villager.fome + 30 >= 100) {
             exibirErro("paoSacola");
         } else {
-            if (villager.vida + 30 <= 101) {
+            if (villager.vida + 30 <= 100) {
                 villager.vida += 30;
                 villager.statusVida();
                 particulaHeart();
@@ -709,6 +710,7 @@ function criarImagem() {
     const top = Math.random() * 85 + "%";
     const left = Math.random() * 85 + "%";
     img.classList.add("img");
+    img.classList.add("atack");
     img.style.top = top;
     img.style.left = left;
     img.addEventListener("click", function () {
