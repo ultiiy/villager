@@ -25,25 +25,25 @@ let villager = {
             document.querySelector("#moedas").style.opacity = 0.6;
             closeMarket();
             closeCave();
-        } else if (villager.vida <= 10) {
+        } else if (this.vida <= 10) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V1.png">';
-        } else if (villager.vida <= 20) {
+        } else if (this.vida <= 20) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V2.png">';
-        } else if (villager.vida <= 30) {
+        } else if (this.vida <= 30) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V3.png">';
-        } else if (villager.vida <= 40) {
+        } else if (this.vida <= 40) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V4.png">';
-        } else if (villager.vida <= 50) {
+        } else if (this.vida <= 50) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V5.png">';
-        } else if (villager.vida <= 60) {
+        } else if (this.vida <= 60) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V6.png">';
-        } else if (villager.vida <= 70) {
+        } else if (this.vida <= 70) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V7.png">';
-        } else if (villager.vida <= 80) {
+        } else if (this.vida <= 80) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V8.png">';
-        } else if (villager.vida <= 90) {
+        } else if (this.vida <= 90) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V9.png">';
-        } else if (villager.vida <= 100) {
+        } else if (this.vida <= 100) {
             document.getElementById("stsVida").innerHTML = '<img src="assets/files/life/V10.png">';
         }
     },
@@ -52,27 +52,27 @@ let villager = {
     statusFome: function () {
         document.getElementById("stsFome").title = `Fome: ${this.fome}%`;
 
-        if (villager.fome <= 0) {
+        if (this.fome <= 0) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F0.png">';
-        } else if (villager.fome <= 10) {
+        } else if (this.fome <= 10) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F1.png">';
-        } else if (villager.fome <= 20) {
+        } else if (this.fome <= 20) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F2.png">';
-        } else if (villager.fome <= 30) {
+        } else if (this.fome <= 30) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F3.png">';
-        } else if (villager.fome <= 40) {
+        } else if (this.fome <= 40) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F4.png">';
-        } else if (villager.fome <= 50) {
+        } else if (this.fome <= 50) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F5.png">';
-        } else if (villager.fome <= 60) {
+        } else if (this.fome <= 60) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F6.png">';
-        } else if (villager.fome <= 70) {
+        } else if (this.fome <= 70) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F7.png">';
-        } else if (villager.fome <= 80) {
+        } else if (this.fome <= 80) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F8.png">';
-        } else if (villager.fome <= 90) {
+        } else if (this.fome <= 90) {
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F9.png">';
-        } else if (villager.fome <= 100) {
+        } else if (this.fome <= 100) {
             this.vida = 100;
             document.getElementById("stsFome").innerHTML = '<img src="assets/files/hunger/F10.png">';
         }
